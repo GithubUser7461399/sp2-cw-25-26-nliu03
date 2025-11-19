@@ -87,7 +87,13 @@ public class CargoBox {
      *  Items that are kept
      */
     public void keepOnlyItemsWith(int maxItemWeightInGrammes) {
-        // TO DO
+        CargoBox newBox = new CargoBox(Items);
+        empty();
+        for (Item item : newBox.Items) {
+            if (item.getWeightInGrammes() <= maxItemWeightInGrammes) {
+                add(item);
+            }
+        }
     }
 
     /* Accessors */
