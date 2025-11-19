@@ -184,8 +184,9 @@ public class CargoBox {
      *  whose weight is less than or equal to the specified method parameter
      */
     public CargoBox makeNewCargoBoxWith(int maxItemWeightInGrammes) {
-        // TO DO
-        return null;
+        CargoBox newBox = new CargoBox(Items);
+        newBox.keepOnlyItemsWith(maxItemWeightInGrammes);
+        return newBox;
     }
 
     /**
