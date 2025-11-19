@@ -7,19 +7,17 @@
  * is created, and it may grow and shrink over the lifetime of a CargoBox
  * object.)
  *
- * @author
+ * @author Nicholas Liu
  */
 public class CargoBox {
 
-    // TO DO
-
     /* Constructors */
-
+    protected Item[] Items;
     /**
      * Constructs a new CargoBox without any Items.
      */
     public CargoBox() {
-        // TO DO
+        this.Items = new Item[0];
     }
 
     /**
@@ -32,7 +30,11 @@ public class CargoBox {
      *  constructed CargoBox
      */
     public CargoBox(Item[] items) {
-        // TO DO
+        if (items != null) {
+            this.Items = items;
+        } else {
+            this.Items = new Item[0];
+        }
     }
 
     /* Modifiers */
