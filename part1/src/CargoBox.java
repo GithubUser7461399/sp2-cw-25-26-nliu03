@@ -119,8 +119,13 @@ public class CargoBox {
      * @return the total weight of the Items in this CargoBox.
      */
     public int totalWeightInGrammes() {
-        // TO DO
-        return 0;
+        int totalWeight = 0;
+        for (Item item : Items) {
+            if (item != null) {
+                totalWeight += item.getWeightInGrammes();
+            }
+        }
+        return totalWeight;
     }
 
     /**
