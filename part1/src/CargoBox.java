@@ -104,8 +104,13 @@ public class CargoBox {
      * @return the number of non-null Items in this CargoBox
      */
     public int numberOfItems() {
-        // TO DO
-        return 0;
+        int count = 0;
+        for (Item item : Items) {
+            if (item != null) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
