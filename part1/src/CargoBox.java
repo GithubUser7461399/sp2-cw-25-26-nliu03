@@ -49,7 +49,7 @@ public class CargoBox {
     public boolean add(Item e) {
         if (e != null) {
             this.Items = new Item[Items.length + 1];
-            this.Items[Items.length] = e;
+            this.Items[Items.length-1] = e;
             return true;
         } else {
             return false;
@@ -90,8 +90,10 @@ public class CargoBox {
         CargoBox newBox = new CargoBox(Items);
         empty();
         for (Item item : newBox.Items) {
-            if (item.getWeightInGrammes() <= maxItemWeightInGrammes) {
-                add(item);
+            if (item != null) {
+                if (item.getWeightInGrammes() <= maxItemWeightInGrammes) {
+                    add(item);
+                }
             }
         }
     }
@@ -104,13 +106,7 @@ public class CargoBox {
      * @return the number of non-null Items in this CargoBox
      */
     public int numberOfItems() {
-        int count = 0;
-        for (Item item : Items) {
-            if (item != null) {
-                count++;
-            }
-        }
-        return count;
+        return Items.length;
     }
 
     /**
@@ -161,10 +157,12 @@ public class CargoBox {
      */
     public Item greatestItem() {
         if (Items.length != 0) {
-            Item greatest = Items[0];
+            Item greatest = new Item("", 1);
             for (Item item : Items) {
-                if (item != null & item.compareTo(greatest) > 0) {
-                    greatest = item;
+                if (item != null) {
+                    if (item.compareTo(greatest) > 0) {
+                        greatest = item;
+                    }
                 }
             }
             return greatest;
@@ -185,7 +183,6 @@ public class CargoBox {
      */
     public CargoBox makeNewCargoBoxWith(int maxItemWeightInGrammes) {
         CargoBox newBox = new CargoBox(Items);
-        newBox.keepOnlyItemsWith(maxItemWeightInGrammes);
         return newBox;
     }
 
@@ -217,11 +214,18 @@ public class CargoBox {
     @Override
     public String toString() {
         String string = "[";
-        for (int i = 0; i < Items.length; i++) {
-            string += "(" + Items[i].toString() + ", " + Items[i].getWeightInGrammes() + "), ";
+        if (Items.length != 0) {
+            for (int i = 0; i < Items.length; i++) {
+                if (Items[i] != null) {
+                    string +=  Items[i].toString() + ", ";
+                }
+            }
+            string += Items[Items.length-1].toString() + "]";
+            return string;
+        } else {
+            return "[]";
         }
-        string += "(" + Items[Items.length-1].toString() + ", " + Items[Items.length-1].getWeightInGrammes() + "), ";
-        return string;
+
     }
 
     /* class methods */
