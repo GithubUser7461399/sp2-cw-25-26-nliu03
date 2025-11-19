@@ -160,8 +160,17 @@ public class CargoBox {
      *  null if this CargoBox does not contain any Item objects
      */
     public Item greatestItem() {
-        // TO DO
-        return null;
+        if (Items.length != 0) {
+            Item greatest = Items[0];
+            for (Item item : Items) {
+                if (item != null & item.compareTo(greatest) > 0) {
+                    greatest = item;
+                }
+            }
+            return greatest;
+        } else {
+            return null;
+        }
     }
 
     /**
