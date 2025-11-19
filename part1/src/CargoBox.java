@@ -143,8 +143,11 @@ public class CargoBox {
      *  or -1.0 if there is no such Item.
      */
     public double averageWeightInGrammes() {
-        // TO DO
-        return 0.0;
+        if (Items.length != 0) {
+            return totalWeightInGrammes() / Items.length;
+        } else {
+            return -1.0;
+        }
     }
 
     /**
