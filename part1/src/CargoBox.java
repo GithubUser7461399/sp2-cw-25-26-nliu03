@@ -216,8 +216,12 @@ public class CargoBox {
      */
     @Override
     public String toString() {
-        // TO DO
-        return null;
+        String string = "[";
+        for (int i = 0; i < Items.length; i++) {
+            string += "(" + Items[i].toString() + ", " + Items[i].getWeightInGrammes() + "), ";
+        }
+        string += "(" + Items[Items.length-1].toString() + ", " + Items[Items.length-1].getWeightInGrammes() + "), ";
+        return string;
     }
 
     /* class methods */
@@ -243,7 +247,12 @@ public class CargoBox {
      *  reference in CargoBoxs
      */
     public static CargoBox heaviestCargoBox(CargoBox[] CargoBoxs) {
-        // TO DO
-        return null;
+        CargoBox heaviest = CargoBoxs[0];
+        for (CargoBox cargobox : CargoBoxs) {
+            if (cargobox.totalWeightInGrammes() > heaviest.totalWeightInGrammes()) {
+                heaviest = cargobox;
+            }
+        }
+        return heaviest;
     }
 }
