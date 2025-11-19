@@ -47,8 +47,13 @@ public class CargoBox {
      * @return true if e is not null, false otherwise
      */
     public boolean add(Item e) {
-        // TO DO
-        return false;
+        if (e != null) {
+            this.Items = new Item[Items.length + 1];
+            this.Items[Items.length] = e;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -60,7 +65,9 @@ public class CargoBox {
      *  false otherwise
      */
     public boolean addAll(Item[] items) {
-        // TO DO
+        for (int i = 0; i > items.length; i++) {
+            add(items[i]);
+        }
         return false;
     }
 
@@ -68,7 +75,7 @@ public class CargoBox {
      * Empties this CargoBox to a CargoBox that contains 0 Items.
      */
     public void empty() {
-        // TO DO
+        this.Items = new Item[0];
     }
 
     /**
