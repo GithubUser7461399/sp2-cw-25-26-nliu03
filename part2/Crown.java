@@ -1,6 +1,6 @@
 /**
 *
-* Abstract class Crown implements the Headgear interface.
+* Concrete class Crown implements the Headgear interface.
 * Crown has its own property jewels, with its own accessor and mutator. It is used to implement getValue for this class.
 * @author Nicholas Liu
 *

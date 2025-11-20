@@ -1,3 +1,11 @@
+/**
+*
+* Concrete class ScooterHelmet extends functionality of the abstract class ProtectiveHeadgear.
+* ScooterHelmet has a boolean property visor, true means it has a visor, otherwise false. visor has an accessor and mutator.
+* ScooterHelmet's implementation for the method getValue() uses ternary operator to calculate the value based on prescence of a visor as well as the protectionFactor.
+* @author Nicholas Liu
+*
+*/
 public class ScooterHelmet extends ProtectiveHeadgear {
     private boolean visor;
     public ScooterHelmet(double value, double protectionFactor, boolean visor) {
@@ -5,7 +13,7 @@ public class ScooterHelmet extends ProtectiveHeadgear {
         this.visor = visor;
     }
     public double getValue() {
-        return (visor)? 80.0 : 160.0 + protectionFactor * 400;
+        return (visor)? 160.0 : 80.0 + protectionFactor * 400;
     }
     public boolean getVisor() {
         return visor;
