@@ -8,4 +8,17 @@
 interface Headgear {
     double value = 0.0;
     double getValue();
+    static double totalValue(Headgear[] headgears) {
+        if (headgears != null) {
+            double total = 0.0;
+            for (Headgear headgear : headgears) {
+                if (headgear != null) {
+                    total += headgear.getValue();
+                }
+            }
+            return total;
+        } else {
+            throw new IllegalArgumentException("headgears cannot be a null pointer.");
+        }
+    }
 }
