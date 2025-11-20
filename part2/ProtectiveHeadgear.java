@@ -9,7 +9,11 @@ abstract class ProtectiveHeadgear implements Headgear {
     protected double value;
     protected double protectionFactor;
     public ProtectiveHeadgear(double value, double protectionFactor) {
-        this.value = value;
+        if (value >= 0) {
+            this.value = value;
+        } else {
+            throw new IllegalArgumentException("Value can't be below zero.");
+        }
         if (protectionFactor >= 0) {
             this.protectionFactor = protectionFactor;
         } else {
