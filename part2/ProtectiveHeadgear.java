@@ -10,7 +10,11 @@ abstract class ProtectiveHeadgear implements Headgear {
     protected double protectionFactor;
     public ProtectiveHeadgear(double value, double protectionFactor) {
         this.value = value;
-        this.protectionFactor = protectionFactor;
+        if (protectionFactor >= 0) {
+            this.protectionFactor = protectionFactor;
+        } else {
+            throw new IllegalArgumentException("Protection factor can't be below zero.");
+        }
     }
     public double getValue() {
         return value;
@@ -19,8 +23,10 @@ abstract class ProtectiveHeadgear implements Headgear {
         return protectionFactor;
     }
     public void setProtectionFactor(double protectionFactor) {
-        if (protectionFactor <= 0.0) {
+        if (protectionFactor >= 0) {
             this.protectionFactor = protectionFactor;
+        } else {
+            throw new IllegalArgumentException("Protection factor can't be below zero.");
         }
     }
 }
