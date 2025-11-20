@@ -29,4 +29,8 @@ public class BobbleHat extends ProtectiveHeadgear {
             throw new IllegalArgumentException("Bobble diameter can't be below zero.");
         }
     }
+    @Override
+    public String toString() {
+        return "(Value: " + getValue() + "), (Protection factor: " + protectionFactor + "), (Bobble diameter in milimetres: " + bobbleDiameter + ")";
+    }
 }

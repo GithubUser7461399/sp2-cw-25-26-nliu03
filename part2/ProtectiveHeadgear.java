@@ -33,4 +33,8 @@ abstract class ProtectiveHeadgear implements Headgear {
             throw new IllegalArgumentException("Protection factor can't be below zero.");
         }
     }
+    @Override
+    public String toString() {
+        return "(Value: " + value + "), (Protection factor: " + protectionFactor + ")";
+    }
 }

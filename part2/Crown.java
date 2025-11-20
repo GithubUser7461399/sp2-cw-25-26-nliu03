@@ -27,4 +27,8 @@ public class Crown implements Headgear {
             throw new IllegalArgumentException("Jewels can't be below zero.");
         }
     }
+    @Override
+    public String toString() {
+        return "(Value: " + getValue() + "), (Jewels: " + jewels + ")";
+    }
 }

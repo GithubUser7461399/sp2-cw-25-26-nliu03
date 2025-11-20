@@ -21,4 +21,8 @@ public class ScooterHelmet extends ProtectiveHeadgear {
     public void setVisor(boolean visor) {
         this.visor = visor;
     }
+    @Override
+    public String toString() {
+        return "(Value: " + getValue() + "), (Protection factor: " + protectionFactor + "), (Has visor?: " + visor + ")";
+    }
 }
