@@ -7,6 +7,13 @@
 */
 public class Crown implements Headgear {
     private int jewels;
+    public Crown(int jewels) {
+        if (jewels >= 0) {
+            this.jewels = jewels;
+        } else {
+            throw new IllegalArgumentException("Jewels can't be below zero.");
+        }
+    }
     public double getValue() {
         return jewels * 200000;
     }
@@ -16,6 +23,8 @@ public class Crown implements Headgear {
     public void setJewels(int jewels) {
         if (jewels >= 0) {
             this.jewels = jewels;
+        } else {
+            throw new IllegalArgumentException("Jewels can't be below zero.");
         }
     }
 }
