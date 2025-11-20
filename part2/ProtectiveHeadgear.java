@@ -1,3 +1,10 @@
+/**
+*
+* Abstract class ProtectiveHeadgear implementd the Headgear interface.
+* ProtectiveHeadgear implements a new property protectionFactor, which has its own accessor and mutator.
+* @author Nicholas Liu
+*
+*/
 abstract class ProtectiveHeadgear implements Headgear {
     protected double value;
     protected double protectionFactor;
@@ -7,5 +14,13 @@ abstract class ProtectiveHeadgear implements Headgear {
     }
     public double getValue() {
         return value;
+    }
+    public double getProtectionFactor() {
+        return protectionFactor;
+    }
+    public void setProtectionFactor(double protectionFactor) {
+        if (protectionFactor <= 0.0) {
+            this.protectionFactor = protectionFactor;
+        }
     }
 }
