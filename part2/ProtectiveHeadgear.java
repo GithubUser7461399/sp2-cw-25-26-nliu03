@@ -1,6 +1,6 @@
 /**
 *
-* Abstract class ProtectiveHeadgear implementd the Headgear interface.
+* Abstract class ProtectiveHeadgear implements the Headgear interface.
 * ProtectiveHeadgear implements a new property protectionFactor, which has its own accessor and mutator.
 * @author Nicholas Liu
 *
